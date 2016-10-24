@@ -173,6 +173,7 @@
     <Compile Include="Controllers\CustomerBankingInformationController.cs" />
     <Compile Include="Controllers\CustomerContactController.cs" />
     <Compile Include="Controllers\CustomerInformationController.cs" />
+    <Compile Include="Controllers\CustomerReportController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -196,6 +197,9 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\VW_CustomerReport.cs">
+      <DependentUpon>CustomerModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\客戶聯絡人.cs">
       <DependentUpon>CustomerModel.tt</DependentUpon>
     </Compile>
@@ -295,6 +299,11 @@
     <Content Include="Views\CustomerBankingInformation\Details.cshtml" />
     <Content Include="Views\CustomerBankingInformation\Edit.cshtml" />
     <Content Include="Views\CustomerBankingInformation\Index.cshtml" />
+    <Content Include="Views\CustomerReport\Create.cshtml" />
+    <Content Include="Views\CustomerReport\Delete.cshtml" />
+    <Content Include="Views\CustomerReport\Details.cshtml" />
+    <Content Include="Views\CustomerReport\Edit.cshtml" />
+    <Content Include="Views\CustomerReport\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

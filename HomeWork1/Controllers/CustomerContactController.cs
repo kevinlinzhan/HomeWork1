@@ -15,10 +15,21 @@ namespace HomeWork1.Controllers
         private CustomerEntities db = new CustomerEntities();
 
         // GET: CustomerContact
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
-            var 客戶聯絡人 = db.客戶聯絡人.Include(客 => 客.客戶資料);
-            return View(客戶聯絡人.ToList());
+
+            var customerContact = db.客戶聯絡人.Include(客 => 客.客戶資料);
+            List<客戶聯絡人> customerContactList;
+            if (string.IsNullOrEmpty(search))
+            {
+                customerContactList = customerContact.OrderByDescending(c => c.客戶Id).Take(10).ToList();
+            }
+            else
+            {
+                customerContactList = customerContact.Where(c => c.姓名 == search).OrderByDescending(c => c.客戶Id).Take(10).ToList();
+            }
+
+            return View(customerContactList);
         }
 
         // GET: CustomerContact/Details/5

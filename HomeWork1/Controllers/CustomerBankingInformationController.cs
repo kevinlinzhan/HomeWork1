@@ -15,10 +15,20 @@ namespace HomeWork1.Controllers
         private CustomerEntities db = new CustomerEntities();
 
         // GET: CustomerBankingInformation
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
-            var 客戶銀行資訊 = db.客戶銀行資訊.Include(客 => 客.客戶資料);
-            return View(客戶銀行資訊.ToList());
+            var customerBankingInformation = db.客戶銀行資訊.Include(客 => 客.客戶資料);
+            List<客戶銀行資訊> customerBankingInformationList;
+            if (string.IsNullOrEmpty(search))
+            {
+                customerBankingInformationList = customerBankingInformation.OrderByDescending(c => c.帳戶名稱).Take(10).ToList();
+            }
+            else
+            {
+                customerBankingInformationList = customerBankingInformation.Where(c => c.帳戶名稱 == search).OrderByDescending(c => c.Id).Take(10).ToList();
+            }
+
+            return View(customerBankingInformationList);
         }
 
         // GET: CustomerBankingInformation/Details/5

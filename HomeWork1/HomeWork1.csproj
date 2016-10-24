@@ -203,12 +203,15 @@
     <Compile Include="Models\客戶聯絡人.cs">
       <DependentUpon>CustomerModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\客戶聯絡人.Partial.cs" />
     <Compile Include="Models\客戶資料.cs">
       <DependentUpon>CustomerModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\客戶資料.Partial.cs" />
     <Compile Include="Models\客戶銀行資訊.cs">
       <DependentUpon>CustomerModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\客戶銀行資訊.Partial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

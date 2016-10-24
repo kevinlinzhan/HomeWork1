@@ -170,6 +170,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomerBankingInformationController.cs" />
+    <Compile Include="Controllers\CustomerContactController.cs" />
+    <Compile Include="Controllers\CustomerInformationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -277,6 +280,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\CustomerContact\Create.cshtml" />
+    <Content Include="Views\CustomerContact\Delete.cshtml" />
+    <Content Include="Views\CustomerContact\Details.cshtml" />
+    <Content Include="Views\CustomerContact\Edit.cshtml" />
+    <Content Include="Views\CustomerContact\Index.cshtml" />
+    <Content Include="Views\CustomerInformation\Create.cshtml" />
+    <Content Include="Views\CustomerInformation\Delete.cshtml" />
+    <Content Include="Views\CustomerInformation\Details.cshtml" />
+    <Content Include="Views\CustomerInformation\Edit.cshtml" />
+    <Content Include="Views\CustomerInformation\Index.cshtml" />
+    <Content Include="Views\CustomerBankingInformation\Create.cshtml" />
+    <Content Include="Views\CustomerBankingInformation\Delete.cshtml" />
+    <Content Include="Views\CustomerBankingInformation\Details.cshtml" />
+    <Content Include="Views\CustomerBankingInformation\Edit.cshtml" />
+    <Content Include="Views\CustomerBankingInformation\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

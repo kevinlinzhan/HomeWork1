@@ -21,11 +21,11 @@ namespace HomeWork1.Controllers
             List<客戶銀行資訊> customerBankingInformationList;
             if (string.IsNullOrEmpty(search))
             {
-                customerBankingInformationList = customerBankingInformation.OrderByDescending(c => c.帳戶名稱).Take(10).ToList();
+                customerBankingInformationList = customerBankingInformation.Where(c => !c.客戶資料.isDelete).OrderByDescending(c => c.帳戶名稱).Take(10).ToList();
             }
             else
             {
-                customerBankingInformationList = customerBankingInformation.Where(c => c.帳戶名稱 == search).OrderByDescending(c => c.Id).Take(10).ToList();
+                customerBankingInformationList = customerBankingInformation.Where(c => c.帳戶名稱 == search && !c.客戶資料.isDelete).OrderByDescending(c => c.Id).Take(10).ToList();
             }
 
             return View(customerBankingInformationList);

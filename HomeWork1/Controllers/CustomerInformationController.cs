@@ -21,11 +21,11 @@ namespace HomeWork1.Controllers
             List<客戶資料> customerInformationList;
             if (string.IsNullOrEmpty(search))
             {
-                customerInformationList = customerInformation.OrderByDescending(c => c.客戶名稱).Take(10).ToList();
+                customerInformationList = customerInformation.Where(c=>c.isDelete==false).OrderByDescending(c => c.客戶名稱).Take(10).ToList();
             }
             else
             {
-                customerInformationList = customerInformation.Where(c => c.客戶名稱 == search).OrderByDescending(c => c.客戶名稱).Take(10).ToList();
+                customerInformationList = customerInformation.Where(c => c.客戶名稱 == search && c.isDelete == false).OrderByDescending(c => c.客戶名稱).Take(10).ToList();
             }
 
             return View(customerInformationList);
@@ -121,7 +121,8 @@ namespace HomeWork1.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             客戶資料 客戶資料 = db.客戶資料.Find(id);
-            db.客戶資料.Remove(客戶資料);
+            //db.客戶資料.Remove(客戶資料);
+            客戶資料.isDelete = true;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

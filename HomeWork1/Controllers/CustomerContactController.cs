@@ -22,11 +22,11 @@ namespace HomeWork1.Controllers
             List<客戶聯絡人> customerContactList;
             if (string.IsNullOrEmpty(search))
             {
-                customerContactList = customerContact.OrderByDescending(c => c.客戶Id).Take(10).ToList();
+                customerContactList = customerContact.Where(c => !c.客戶資料.isDelete).OrderByDescending(c => c.客戶Id).Take(10).ToList();
             }
             else
             {
-                customerContactList = customerContact.Where(c => c.姓名 == search).OrderByDescending(c => c.客戶Id).Take(10).ToList();
+                customerContactList = customerContact.Where(c => c.姓名 == search && !c.客戶資料.isDelete).OrderByDescending(c => c.客戶Id).Take(10).ToList();
             }
 
             return View(customerContactList);

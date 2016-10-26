@@ -15,8 +15,8 @@ namespace HomeWork1.Models
     public partial class VW_CustomerReport
     {
         public string 客戶名稱 { get; set; }
-        public Nullable<int> contactCounts { get; set; }
-        public Nullable<int> bankCounts { get; set; }
+        public int contactCounts { get; set; }
+        public int bankCounts { get; set; }
         public int Id { get; set; }
     }
 }
